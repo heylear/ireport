@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.myallways</groupId>
 	<artifactId>ireport</artifactId>
@@ -7,7 +8,7 @@
 	<name>ireport Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<!-- global properties-->
+		<!-- global properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<encoding>UTF-8</encoding>
 		<java.api.version>1.6</java.api.version>
@@ -20,14 +21,14 @@
 		<maven.war.plugin.version>2.2</maven.war.plugin.version>
 		<maven.source.plugin.version>2.2</maven.source.plugin.version>
 		<maven.resources.plugin.version>2.6</maven.resources.plugin.version>
-		<maven.dependency.plugin.version>2.5</maven.dependency.plugin.version>
+		<maven.dependency.plugin.version>2.9</maven.dependency.plugin.version>
 		<maven.google.license.plugin.version>1.4.0</maven.google.license.plugin.version>
 		<maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
 		<maven.eclipse.plugin.version>2.5</maven.eclipse.plugin.version>
 		<maven.compiler.plugin.version>2.5.1</maven.compiler.plugin.version>
 		<maven.jasperreports.plugin.version>1.0-beta-1</maven.jasperreports.plugin.version>
 
-		<!-- apache commons properties-->
+		<!-- apache commons properties -->
 		<commons-beanutils.version>1.8.3</commons-beanutils.version>
 		<commons-collections.version>3.2.1</commons-collections.version>
 		<commons-dbcp.version>1.2.2</commons-dbcp.version>
@@ -47,47 +48,47 @@
 		<com.lowagie.itext.version>2.1.7</com.lowagie.itext.version>
 		<com.itextpdf.itext-asian.version>5.2.0</com.itextpdf.itext-asian.version>
 
-		<!--  Dozer -->
+		<!-- Dozer -->
 		<dozer.version>5.4.0</dozer.version>
 
-		<!--  Joda-Time  -->
+		<!-- Joda-Time -->
 		<joda-time.version>2.2</joda-time.version>
 		<joda-time.joda-time-jsptags.version>1.1.1</joda-time.joda-time-jsptags.version>
 		<jadira-usertype-core.version>3.0.0.GA</jadira-usertype-core.version>
 
-		<!--  Jackson  -->
+		<!-- Jackson -->
 		<org.codehaus.jackson.version>1.9.7</org.codehaus.jackson.version>
 
-		<!--  JPA  -->
+		<!-- JPA -->
 		<org.hibernate.javax.persistence.version>1.0.1.Final</org.hibernate.javax.persistence.version>
 		<org.hibernate.version>4.2.4.Final</org.hibernate.version>
 
-		<!--  BeanValidation  -->
+		<!-- BeanValidation -->
 		<javax.validation.version>1.0.0.Final</javax.validation.version>
 		<org.hibernate.hibernate-validator.version>4.3.1.Final</org.hibernate.hibernate-validator.version>
 
-		<!--  Logging  -->
+		<!-- Logging -->
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<ch.qos.logback.version>1.0.13</ch.qos.logback.version>
 		<org.lazyluke.version>0.2.7</org.lazyluke.version>
 
-		<!--  Spring Framework  -->
+		<!-- Spring Framework -->
 		<org.springframework-version>3.2.5.RELEASE</org.springframework-version>
 		<org.springframework.data.spring-data-jpa.version>1.3.4.RELEASE</org.springframework.data.spring-data-jpa.version>
 		<org.springframework.data.version>1.5.2.RELEASE</org.springframework.data.version>
 		<org.springframework.security.version>3.1.4.RELEASE</org.springframework.security.version>
 		<org.aspectj-version>1.7.3</org.aspectj-version>
 
-		<!--  JavaEE/SE APIs  -->
+		<!-- JavaEE/SE APIs -->
 		<javax.inject.version>1</javax.inject.version>
 		<javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
 		<javax.transaction.version>1.1</javax.transaction.version>
 		<tomcat.api.version>7.0.40</tomcat.api.version>
 
-		<!--  database  -->
+		<!-- database -->
 		<com.h2database.version>1.4.182</com.h2database.version>
 
-		<!--  JUnit  -->
+		<!-- JUnit -->
 		<junit.version>4.7</junit.version>
 		<org.mockito.version>1.9.0</org.mockito.version>
 	</properties>
@@ -641,21 +642,45 @@
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-kernel</artifactId>
 			<version>${org.apache.axis2.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.ws.commons.schema</groupId>
+					<artifactId>XmlSchema</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-java2wsdl</artifactId>
 			<version>${org.apache.axis2.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.ws.commons.schema</groupId>
+					<artifactId>XmlSchema</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-codegen</artifactId>
 			<version>${org.apache.axis2.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.ws.commons.schema</groupId>
+					<artifactId>XmlSchema</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-adb</artifactId>
 			<version>${org.apache.axis2.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.ws.commons.schema</groupId>
+					<artifactId>XmlSchema</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- poi dependency -->
